@@ -1,6 +1,7 @@
 # IntelliJ
 .idea/
 *.iml
+*.log
 
 # Maven
 target/
@@ -12,3 +13,4 @@ Thumbs.db
 # Secrets
 config.properties
 .env
+src/main/resources/application.properties
