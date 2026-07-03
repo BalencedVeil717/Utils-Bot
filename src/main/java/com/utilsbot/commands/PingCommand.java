@@ -1,23 +1,13 @@
 package com.utilsbot.commands;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class PingCommand implements Command {
-
+public class PingCommand extends ListenerAdapter {
     @Override
-    public String getName() {
-        return "ping";
-    }
-
-    @Override
-    public SlashCommandData getCommandData() {
-        return Commands.slash("ping", "Checks the bot's latency.");
-    }
-
-    @Override
-    public void execute(SlashCommandInteractionEvent event) {
-        event.reply("Pong! lol").queue();
+    public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        if (event.getName().equals("ping")) {
+            event.reply("Pong!").queue();
+        }
     }
 }
