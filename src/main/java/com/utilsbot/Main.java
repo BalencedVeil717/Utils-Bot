@@ -14,7 +14,7 @@ public class Main {
         jda.awaitReady();
 
         jda.updateCommands()
-                .addCommands(Commands.slash("ping", "Replies with pong!"))
+                .addCommands(Commands.slash("ping", "Returns Bot Latency."))
                 .queue();
 
         System.out.println("Logged in as : " + jda.getSelfUser().getAsTag());
