@@ -1,4 +1,5 @@
 bot.token=your-bot-token-here
 # Optional: set for a test guild to get instant slash command updates during dev.
 # Leave blank/omit for global commands (registration takes up to ~1 hour to propagate).
-guild.io=
+guild.id=
+astro.api=
