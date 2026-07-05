@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.time.Instant;
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class PingCommand extends ListenerAdapter {
@@ -23,7 +23,7 @@ public class PingCommand extends ListenerAdapter {
                 ping <= 400 ? "Poor" :
                 ping <= 500 ? "Bad" : "Terrible";
 
-            String time = DateTimeFormatter.ofPattern("dd MMM, HH:mm").withZone(ZoneOffset.UTC).format(Instant.now());
+            String time = DateTimeFormatter.ofPattern("dd MMM, HH:mm").withZone(ZoneId.of("Asia/Kolkata")).format(Instant.now());
 
 
             event
@@ -33,7 +33,7 @@ public class PingCommand extends ListenerAdapter {
                             Container.of(
                                     TextDisplay.of("## Ping : " + ping + " ms"),
                                     Separator.createDivider(Separator.Spacing.SMALL),
-                                    TextDisplay.of("-# " + label + " | " + time + " UTC")
+                                    TextDisplay.of("-# " + label + " | " + time + " IST")
 
                             )
                     )
