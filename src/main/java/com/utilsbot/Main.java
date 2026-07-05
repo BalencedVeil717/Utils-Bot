@@ -20,5 +20,3 @@ public class Main {
         System.out.println("Logged in as : " + jda.getSelfUser().getAsTag());
     }
 }
-
-//Hello java!
